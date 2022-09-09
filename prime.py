@@ -1,12 +1,23 @@
+#!/usr/bin/python3
 lp = []
-with open("prime.txt", 'r') as file:
+with open("primes.txt", 'r') as file:
         lines = file.readlines()
         for line in lines:
             lp.append(int(line))
+def check(n):
+    for i in lp:
+        if n % i == 0:
+            return False
+    return True
 def factor(n):
     for i in lp:
         if n % int(i) == 0:
             return int(i)
+    """lpi = [i for i in range (100001, int(n ** .5)+1,2) if check(i)]"""
+    for i in range (1000001, int(n ** .5) + 1, 2):
+        if n % i == 0:
+            return i
+        
 def primef(n):
     if n <= 3:
         return int(n)
