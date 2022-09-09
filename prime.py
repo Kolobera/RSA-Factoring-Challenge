@@ -7,6 +7,10 @@ def factor(n):
     for i in lp:
         if n % int(i) == 0:
             return int(i)
+    #lpi = [i for i in range (100001, int(n ** .5)+1) if i % 2 != 0 and i % 3 != 0 and i % 5 != 0]
+    for i in range (10000001, int(n ** .5)+1):
+        if n % i == 0:
+            return i
 def primef(n):
     if n <= 3:
         return int(n)
