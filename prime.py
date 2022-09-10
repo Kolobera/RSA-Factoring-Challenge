@@ -1,8 +1,9 @@
 #!/usr/bin/python3
 lp = []
 with open("prime.txt", 'r') as file:
-        for line in file:
-            lp.append(int(line[:-1]))
+        """for line in file:
+            lp.append(int(line[:-1]))"""
+        lp = [int(line[:-1]) for line in file]
 def check(n):
     for i in lp:
         if n % i == 0:
@@ -13,7 +14,7 @@ def factor(n):
         if n % int(i) == 0:
             return int(i)
     #lpi = [i for i in range (100001, int(n ** .5)+1) if i % 2 != 0 and i % 3 != 0 and i % 5 != 0]
-    for i in range (10000001, int(n ** .5)+1,2):
+    for i in range (100000001, int(n ** .5)+1,2):
         if n % i == 0:
             return i
 def primef(n):
