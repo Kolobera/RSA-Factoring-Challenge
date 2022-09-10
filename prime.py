@@ -1,9 +1,9 @@
 #!/usr/bin/python3
 lp = []
 with open("prime.txt", 'r') as file:
-        """for line in file:
-            lp.append(int(line[:-1]))"""
-        lp = file.read().split(",")
+        for line in file:
+            lp=line[:-1].split(",")
+            break
 def check(n):
     for i in lp:
         if n % i == 0:
