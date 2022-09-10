@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 import sys
-from prime import factor, primef
+from prime import factor, primef, isprime
 
 if __name__ == "__main__":
     if len(sys.argv) != 2:

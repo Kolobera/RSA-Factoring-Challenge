@@ -1,13 +1,13 @@
 lp = []
-with open('2T_part1.txt', 'r') as file:
+with open('primes.txt', 'r') as file:
     lines = file.readlines()
     for i in lines:
-        for j in list(i.split()):
-            lp.append(int(j))
+        """for j in list(i.split()):"""
+        lp.append(int(i))
 with open("prime.txt", "w") as file:
     for i in lp:
         file.write(str(i)+",")
-    file.write("]")
+
 
 
 

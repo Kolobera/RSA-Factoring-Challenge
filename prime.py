@@ -4,19 +4,27 @@ with open("prime.txt", 'r') as file:
         for line in file:
             lp=line[:-1].split(",")
             break
-def check(n):
-    for i in lp:
-        if n % i == 0:
-            return False
-    return True
+import itertools
+
+def isprime(n):
+    if n % 2 == 0:
+        return 2
+    elif n % 3 == 0:
+        return 3
+    divs = range(5, int(n ** 0.5) + 1, 2)
+    return [d for d in itertools.chain(divs[::3], divs[1::3]) if n % d == 0][0]
+
 def factor(n):
     for i in lp:
         if n % int(i) == 0:
             return int(i)
     #lpi = [i for i in range (100001, int(n ** .5)+1) if i % 2 != 0 and i % 3 != 0 and i % 5 != 0]
-    for i in range (100000001, int(n ** .5)+1,2):
+    """for i in range (100000001, int(n ** .5)+1,2):
         if n % i == 0:
-            return i
+            return i"""
+    divs = range(1000003, int(n ** 0.5) + 1, 2)
+    return [d for d in itertools.chain(divs[::3], divs[1::3]) if n % d == 0][0]
+
     return n
 def primef(n):
     if n <= 3:
