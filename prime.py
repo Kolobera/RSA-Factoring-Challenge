@@ -17,6 +17,7 @@ def factor(n):
     for i in range (50000001, int(n ** .5)+1,2):
         if n % i == 0:
             return i
+    return n
 def primef(n):
     if n <= 3:
         return int(n)
