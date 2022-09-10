@@ -1,9 +1,8 @@
 #!/usr/bin/python3
 lp = []
 with open("prime.txt", 'r') as file:
-        lines = file.readlines()
-        for line in lines:
-            lp.append(int(line))
+        for line in file:
+            lp.append(int(line[:-1]))
 def check(n):
     for i in lp:
         if n % i == 0:
