@@ -3,6 +3,8 @@ import sys
 from prime import factor, primef
 
 if __name__ == "__main__":
+    if len(sys.argv) != 2:
+        exit(1)
     lpi = []
     with open(sys.argv[1], 'r') as file:
         lines = file.readlines()
