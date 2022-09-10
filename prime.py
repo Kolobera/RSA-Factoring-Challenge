@@ -21,11 +21,22 @@ def factor(n):
     #lpi = [i for i in range (100001, int(n ** .5)+1) if i % 2 != 0 and i % 3 != 0 and i % 5 != 0]
     """for i in range (100000001, int(n ** .5)+1,2):
         if n % i == 0:
-            return i"""
+            return i
     divs = range(1000003, int(n ** 0.5) + 1, 2)
     l = [d for d in itertools.chain(divs[::3], divs[1::3]) if n % d == 0]
     if l != []:
-        return l[0]
+        return l[0]"""
+    k = 1
+    while 6*k+1 < int (n**.5) +1:
+        if n % 6*k+1 == 0:
+            return 6*k+1
+        k +=1
+    k = 1
+    while 6*k-1 < int (n**.5) +1:
+        if n % 6*k-1 == 0:
+            return 6*k-1
+        k += 1
+
     return 1
 def primef(n):
     if n <= 3:
