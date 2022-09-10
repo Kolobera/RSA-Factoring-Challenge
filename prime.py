@@ -23,9 +23,10 @@ def factor(n):
         if n % i == 0:
             return i"""
     divs = range(1000003, int(n ** 0.5) + 1, 2)
-    return [d for d in itertools.chain(divs[::3], divs[1::3]) if n % d == 0][0]
-
-    return n
+    l = [d for d in itertools.chain(divs[::3], divs[1::3]) if n % d == 0]
+    if l != []:
+        return l[0]
+    return 1
 def primef(n):
     if n <= 3:
         return int(n)
