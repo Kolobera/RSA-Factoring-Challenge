@@ -6,5 +6,5 @@ with open('2T_part1.txt', 'r') as file:
             lp.append(int(j))
 with open("prime.txt", "w") as file:
     for i in lp:
-        if i < 50000000:
+        if i < 20000000:
             file.write(str(i)+"\n")
