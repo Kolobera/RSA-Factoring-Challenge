@@ -4,11 +4,9 @@ with open('2T_part1.txt', 'r') as file:
     for i in lines:
         for j in list(i.split()):
             lp.append(int(j))
-with open("primes.py", "w") as file:
-    file.write("[")
+with open("prime.txt", "w") as file:
     for i in lp:
-        if i < 50000000:
-            file.write(str(i)+",")
+        file.write(str(i)+",")
     file.write("]")
 
 

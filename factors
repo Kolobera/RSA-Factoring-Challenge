@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 import sys
-from primes import factor, primef
+from prime import factor, primef
 
 if __name__ == "__main__":
     lpi = []
