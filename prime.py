@@ -5,7 +5,6 @@ with open("prime.txt", 'r') as file:
             lp=line[:-1].split(",")
             break
 
-import itertools
 from functools import reduce
 from math import sqrt
 def factors_1(n):
@@ -14,14 +13,14 @@ def factors_1(n):
                 ([i, n//i] for i in range(1, int(sqrt(n))+1, step) if n % i == 0)))
 
 
-def isprime(n):
+"""def isprime(n):
     if n % 2 == 0:
         return 2
     elif n % 3 == 0:
         return 3
     divs = range(5, int(n ** 0.5) + 1, 2)
     return [d for d in itertools.chain(divs[::3], divs[1::3]) if n % d == 0][0]
-
+"""
 def factor(n):
     for i in lp:
         j = int(i)
