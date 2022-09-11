@@ -17,6 +17,8 @@ def isprime(n):
 def factor(n):
     for i in lp:
         if n % int(i) == 0:
+            if int(i) == n:
+                return 1
             return int(i)
     #lpi = [i for i in range (100001, int(n ** .5)+1) if i % 2 != 0 and i % 3 != 0 and i % 5 != 0]
     """for i in range (100000001, int(n ** .5)+1,2):
@@ -32,11 +34,13 @@ def factor(n):
             return 6*k+1
         if n % (6*k-1) == 0:
             return 6*k-1"""
-    for i in range(1666660, int((int(n**.5) + 1)/6) + 1):
-        if n % (6*i+1) == 0:
-            return 6*i+1
-        if n % (6*i-1) == 0:
-            return 6*i-1
+    if n > 10000000:
+        for i in range(1666660, int((int(n**.5) + 1)/6) + 1):
+            if n % (6*i+1) == 0:
+                print("ijoij")
+                return 6*i+1
+            if n % (6*i-1) == 0:
+                return 6*i-1
     return 1
 def primef(n):
     if n <= 3:
