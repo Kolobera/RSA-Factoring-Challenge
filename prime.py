@@ -25,14 +25,18 @@ def factor(n):
     divs = range(1000003, int(n ** 0.5) + 1, 2)
     l = [d for d in itertools.chain(divs[::3], divs[1::3]) if n % d == 0]
     if l != []:
-        return l[0]"""
-    k = 1
+        return l[0]
+    k = 166660
     while 6*k+1 <= int(n**0.5) + 1:
         if n % (6*k+1) == 0:
             return 6*k+1
         if n % (6*k-1) == 0:
-            return 6*k-1
-        k+=1
+            return 6*k-1"""
+    for i in range(166660, int((int(n**.5) + 1)/6) + 1):
+        if n % (6*i+1) == 0:
+            return 6*i+1
+        if n % (6*i-1) == 0:
+            return 6*i-1
     return 1
 def primef(n):
     if n <= 3:
