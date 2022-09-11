@@ -27,16 +27,12 @@ def factor(n):
     if l != []:
         return l[0]"""
     k = 1
-    while 6*k+1 < int (n**.5) +1:
-        if n % 6*k+1 == 0:
+    while 6*k+1 <= int(n**0.5) + 1:
+        if n % (6*k+1) == 0:
             return 6*k+1
-        k +=1
-    k = 1
-    while 6*k-1 < int (n**.5) +1:
-        if n % 6*k-1 == 0:
+        if n % (6*k-1) == 0:
             return 6*k-1
-        k += 1
-
+        k+=1
     return 1
 def primef(n):
     if n <= 3:
