@@ -1,0 +1,14 @@
+#!/usr/bin/python3
+import sys
+from prime import factor, primef, isprime
+if __name__ == "__main__":
+    if len(sys.argv) != 2:
+        exit(1)
+    lpi = []
+    with open(sys.argv[1], 'r') as file:
+        lines = file.readlines()
+        for line in lines:
+            lpi.append(int(line))
+    for i in lpi:
+        j = factor(i)
+        print("{}={:d}*{}".format(i,i//j,j))
