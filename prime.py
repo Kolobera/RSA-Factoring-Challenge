@@ -32,7 +32,7 @@ def factor(n):
             return 6*k+1
         if n % (6*k-1) == 0:
             return 6*k-1"""
-    for i in range(166660, int((int(n**.5) + 1)/6) + 1):
+    for i in range(1666660, int((int(n**.5) + 1)/6) + 1):
         if n % (6*i+1) == 0:
             return 6*i+1
         if n % (6*i-1) == 0:
