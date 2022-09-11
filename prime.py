@@ -35,12 +35,19 @@ def factor(n):
         if n % (6*k-1) == 0:
             return 6*k-1"""
     if n > 10000000:
-        for i in range(1666660, int((int(n**.5) + 1)/6) + 1):
+        li=[(6*i+1, 6*i-1) for i in range(1666660, int((int(n**.5) + 1)/6) + 1) if (n % (6*i+1) == 0 or n % (6*i-1) == 0)]
+        if li != []:
+            for i in li[0]:
+                if n % i == 0:
+                    return i
+
+        """for i in range(1666660, int((int(n**.5) + 1)/6) + 1):
             if n % (6*i+1) == 0:
                 print("ijoij")
                 return 6*i+1
             if n % (6*i-1) == 0:
                 return 6*i-1
+        li=[(6*i+1, 6*i-1) for i in range(1666660, int((int(n**.5) + 1)/6) + 1) if (n % (6*i+1) == 0, n % (6*i-1) == 0)]"""
     return 1
 def primef(n):
     if n <= 3:
