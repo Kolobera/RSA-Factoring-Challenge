@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 import sys
-from prime import factor, primef, isprime
+from prime import factor, primef, isprime, factors_1
 from random import randint
 
 
@@ -67,6 +67,13 @@ if __name__ == "__main__":
         for line in lines:
             lpi.append(int(line))
     for i in lpi:
-        j = brent_factorise(i)
+        l = factors_1(i)
+        if len(l) == 2:
+            j = 1
+        else:
+            for k in l:
+                if k != 1 and k != i:
+                    j = k
+            
         print("{}={:d}*{}".format(i,i//j,j))
 
