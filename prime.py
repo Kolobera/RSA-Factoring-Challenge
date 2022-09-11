@@ -43,7 +43,7 @@ def factor(n):
             return 6*k+1
         if n % (6*k-1) == 0:
             return 6*k-1"""
-    print("######")
+
     if n > 15000000:
         li=[(6*i+1, 6*i-1) for i in range(2499999, int((int(n**.5) + 1)/6) + 1) if (n % (6*i+1) == 0 or n % (6*i-1) == 0)]
         if li != []:
