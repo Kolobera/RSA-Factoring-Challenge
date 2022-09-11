@@ -4,6 +4,7 @@ with open("prime.txt", 'r') as file:
         for line in file:
             lp=line[:-1].split(",")
             break
+
 import itertools
 
 def isprime(n):
@@ -16,10 +17,11 @@ def isprime(n):
 
 def factor(n):
     for i in lp:
-        if n % int(i) == 0:
-            if int(i) == n:
+        j = int(i)
+        if n % j == 0:
+            if j == n:
                 return 1
-            return int(i)
+            return j
     #lpi = [i for i in range (100001, int(n ** .5)+1) if i % 2 != 0 and i % 3 != 0 and i % 5 != 0]
     """for i in range (100000001, int(n ** .5)+1,2):
         if n % i == 0:
@@ -34,6 +36,7 @@ def factor(n):
             return 6*k+1
         if n % (6*k-1) == 0:
             return 6*k-1"""
+    print("######")
     if n > 20000000:
         li=[(6*i+1, 6*i-1) for i in range(3333330, int((int(n**.5) + 1)/6) + 1) if (n % (6*i+1) == 0 or n % (6*i-1) == 0)]
         if li != []:
