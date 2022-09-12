@@ -1,8 +1,5 @@
 #!/usr/bin/python3
-import sys
 from random import randint
-
-
 def gcd(a, b):
     """ Returns the greatest common divisor of the two numbers
     """
@@ -62,10 +59,8 @@ if __name__ == "__main__":
         exit(1)
     lpi = []
     with open(sys.argv[1], 'r') as file:
-        lines = file.readlines()
-        for line in lines:
-            lpi.append(int(line))
-    for i in lpi:
-        j = brent_factorise(i)
-        print("{}={:d}*{}".format(i,i//j,j))
+        for i in f:
+            n = int(i[:-1])
+            j = brent_factorise(n)
+            print("{}={:d}*{}".format(i,i//j,j))
 
