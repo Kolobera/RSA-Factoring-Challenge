@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 from random import randint
+import sys
 def gcd(a, b):
     """ Returns the greatest common divisor of the two numbers
     """
@@ -57,9 +58,8 @@ def brent_factorise(n, iterations=None):
 if __name__ == "__main__":
     if len(sys.argv) != 2:
         exit(1)
-    lpi = []
     with open(sys.argv[1], 'r') as file:
-        for i in f:
+        for i in file:
             n = int(i[:-1])
             j = brent_factorise(n)
             print("{}={:d}*{}".format(i,i//j,j))
