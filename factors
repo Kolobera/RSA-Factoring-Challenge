@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 from random import randint
 import sys
-from prime import factor, primef
+from prime import factor, isprime
 def gcd(a, b):
     """ Returns the greatest common divisor of the two numbers
     """
