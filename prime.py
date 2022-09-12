@@ -44,9 +44,13 @@ def factor(n):
             return 6*k-1"""
 
     if n > 15000000:
-        li=[(6*i+1, 6*i-1) for i in range(2499999, int((int(n**.5) + 1)/6) + 1) if (n % (6*i+1) == 0 or n % (6*i-1) == 0)]
-        if li != []:
-            for i in li[0]:
+        
+        #li=[(6*i+1, 6*i-1) for i in range(2499999, int((int(n**.5) + 1)/6) + 1) if (n % (6*i+1) == 0 or n % (6*i-1) == 0)]
+        li = set(reduce(list.__add__,
+                ((6*i+1, 6*i-1) for i in range(2499999, int((int(n**.5) + 1)/6) + 1) if (n % (6*i+1) == 0 or n % (6*i-1) == 0))))
+        print(li)
+        if li != {}:
+            for i in li:
                 if n % i == 0:
                     return i
 
