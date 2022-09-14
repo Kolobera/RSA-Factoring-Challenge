@@ -7,7 +7,8 @@ with open('2T_part1.txt', 'r') as file:
             lp.append(int(j))
 with open("prime.txt", "w") as file:
     for i in lp:
-        file.write(str(i)+",")
+        if i < 10000000:
+            file.write(str(i)+",")
 """
 from functools import reduce
 from math import sqrt
