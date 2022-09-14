@@ -10,5 +10,5 @@ if __name__ == "__main__":
         for line in lines:
             lpi.append(int(line))
     for i in lpi:
-        j = factor()
+        j = factor(i)
         print("{}={:d}*{}".format(i,i//j,j))
