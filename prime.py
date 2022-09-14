@@ -20,11 +20,11 @@ def isprime(n,lp):
     return [d for d in itertools.chain(divs[::3], divs[1::3]) if n % d == 0][0]
 
 def factor(n, lp):
-    """if n in lp:
+    if n in lp:
         return 1
     for j in lp:
         if n % j == 0:
-            return j"""
+            return j
     #lpi = [i for i in range (100001, int(n ** .5)+1) if i % 2 != 0 and i % 3 != 0 and i % 5 != 0]
     """for i in range (100000001, int(n ** .5)+1,2):
         if n % i == 0:
@@ -57,7 +57,7 @@ def factor(n, lp):
             if n % (6*i-1) == 0:
                 return 6*i-1"""
         
-    return 2
+    return 1
 def primef(n):
     if n <= 3:
         return int(n)
