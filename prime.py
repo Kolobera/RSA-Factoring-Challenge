@@ -34,7 +34,7 @@ def factor(n):
     """for i in range (100000001, int(n ** .5)+1,2):
         if n % i == 0:
             return i
-    divs = range(1000003, int(n ** 0.5) + 1, 2)
+    divs = range(10000000, int(n ** 0.5) + 1, 2)
     l = [d for d in itertools.chain(divs[::3], divs[1::3]) if n % d == 0]
     if l != []:
         return l[0]
@@ -43,9 +43,9 @@ def factor(n):
         if n % (6*k+1) == 0:
             return 6*k+1
         if n % (6*k-1) == 0:
-            return 6*k-1"""
+            return 6*k-1
 
-    """
+    
     if n > 10000000:
         
         li=[(6*i+1, 6*i-1) for i in range(1666660, int((int(n**.5) + 1)/6) + 1) if (n % (6*i+1) == 0 or n % (6*i-1) == 0)]
@@ -56,7 +56,7 @@ def factor(n):
                 if n % i == 0:
                     return i"""
 
-    for i in range(1666660, int((int(n**.5) + 1)/6) + 1):
+    for i in reversed(range(1666660, int((int(n**.5) + 1)/6) + 1)):
             if n % (6*i+1) == 0:
                 return 6*i+1
             if n % (6*i-1) == 0:
