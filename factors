@@ -2,6 +2,13 @@
 from random import randint
 import sys
 from prime import factor, isprime
+
+lp = []
+with open("prime.txt", 'r') as file:
+        for line in file:
+            lp=line[:-1].split(",")
+            break
+lp = list(map(int, lp))
 def gcd(a, b):
     """ Returns the greatest common divisor of the two numbers
     """
@@ -65,5 +72,5 @@ if __name__ == "__main__":
         for line in lines:
             lpi.append(int(line))
     for i in lpi:
-        j = factor(i)
+        j = factor(i, lp)
         print("{}={:d}*{}".format(i,i//j,j))

@@ -1,9 +1,5 @@
 #!/usr/bin/python3
-lp = []
-with open("prime.txt", 'r') as file:
-        for line in file:
-            lp=line[:-1].split(",")
-            break
+
 
 from functools import reduce
 from math import sqrt
@@ -23,9 +19,8 @@ def isprime(n):
     divs = range(1000001, int(n ** 0.5) + 1, 2)
     return [d for d in itertools.chain(divs[::3], divs[1::3]) if n % d == 0][0]
 
-def factor(n):
-    for i in lp:
-        j = int(i)
+def factor(n, lp):
+    for j in lp:
         if n % j == 0:
             if j == n:
                 return 1
