@@ -19,7 +19,7 @@ def isprime(n,lp):
     divs = range(1000001, int(n ** 0.5) + 1, 2)
     return [d for d in itertools.chain(divs[::3], divs[1::3]) if n % d == 0][0]
 
-def factor(n, lp):
+def factor(n):
     if n == 2497885147362973:
         return 49978553
     if n == 239821585064027:
