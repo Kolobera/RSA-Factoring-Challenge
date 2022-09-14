@@ -19,16 +19,12 @@ def isprime(n,lp):
     divs = range(1000001, int(n ** 0.5) + 1, 2)
     return [d for d in itertools.chain(divs[::3], divs[1::3]) if n % d == 0][0]
 
-def factor(n):
-    if n % 2 == 0:
-        return 2
-    if n%3==0:
-        return 3
-    """for j in lp:
+def factor(n, lp):
+    if n in lp:
+        return 1
+    for j in lp:
         if n % j == 0:
-            if j == n:
-                return 1
-            return j"""
+            return j
     #lpi = [i for i in range (100001, int(n ** .5)+1) if i % 2 != 0 and i % 3 != 0 and i % 5 != 0]
     """for i in range (100000001, int(n ** .5)+1,2):
         if n % i == 0:
