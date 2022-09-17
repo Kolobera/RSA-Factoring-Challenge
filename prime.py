@@ -20,7 +20,6 @@ def isprime(n,lp):
     return [d for d in itertools.chain(divs[::3], divs[1::3]) if n % d == 0][0]
 
 def factor(n, lp):
-    print('rr')
     if n in lp:
         return 1
     for j in lp:
