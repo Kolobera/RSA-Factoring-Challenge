@@ -1,2 +1,2 @@
-def factor(n):
+def factors(n):
     return n
