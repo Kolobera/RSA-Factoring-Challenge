@@ -42,7 +42,6 @@ def factor(n, lp):
 
     
     if n > 10000000:
-        
         #li=[(6*i+1, 6*i-1) for i in range(1666660, int((int(n**.5) + 1)/6) + 1) if (n % (6*i+1) == 0 or n % (6*i-1) == 0)]
         li = set(reduce(list.__add__,
                 ((6*i+1, 6*i-1) for i in range(1666660, int((int(n**.5) + 1)/6) + 1) if (n % (6*i+1) == 0 or n % (6*i-1) == 0))))
@@ -50,12 +49,13 @@ def factor(n, lp):
             for i in li:
                 if n % i == 0:
                     return i
+    """
 
     for i in reversed(range(166660, int((int(n**.5) + 1)/6) + 1)):
             if n % (6*i+1) == 0:
                 return 6*i+1
             if n % (6*i-1) == 0:
-                return 6*i-1"""
+                return 6*i-1
         
     return 1
 def primef(n):
