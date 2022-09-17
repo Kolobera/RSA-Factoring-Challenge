@@ -50,12 +50,12 @@ def factor(n, lp):
                 if n % i == 0:
                     return i
     """
-    if n > 10000000:
-        for i in reversed(range(1666660, int((int(n**.5) + 1)/6) + 1)):
-                if n % (6*i+1) == 0:
-                    return 6*i+1
-                if n % (6*i-1) == 0:
-                    return 6*i-1
+    
+    for i in reversed(range(1666660, int((int(n**.5) + 1)/6) + 1)):
+            if n % (6*i+1) == 0:
+                return 6*i+1
+            if n % (6*i-1) == 0:
+                return 6*i-1
         
     return 1
 def primef(n):
