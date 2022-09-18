@@ -16,6 +16,6 @@ if __name__ == "__main__":
         for line in lines:
             lpi.append(int(line))
     for i in lpi:
-        j = factor(i, lp)
+        for j in gen_primes(i):
         
-        print("{}={}*{}".format(i,i//j,j))
+            print("{}={}*{}".format(i,i//j,j))

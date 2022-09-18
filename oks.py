@@ -17,6 +17,7 @@ def factors_1(n):
     return set(reduce(list.__add__,
                 ([i, n//i] for i in range(1, int(sqrt(n))+1, step) if n % i == 0)))
 print(factors_1(2497885147362973))"""
+import sys
 def gen_primes(n):
     """ Generate an infinite sequence of prime numbers.
     """
@@ -28,15 +29,15 @@ def gen_primes(n):
     D = {}
     
     # The running integer that's checked for primeness
-    q = 2
+    q = 9999991
     
-    while q<n:
+    while q<n**.5:
         if q not in D:
-            # q is a new prime.
+                # q is a new prime.
             # Yield it and mark its first multiple that isn't
             # already marked in previous iterations
             # 
-            yield q
+            #yield q
             D[q * q] = [q]
         else:
             # q is composite. D[q] is the list of primes that
@@ -49,9 +50,9 @@ def gen_primes(n):
                 D.setdefault(p + q, []).append(p)
             del D[q]
         if n % int(q) == 0:
-            print('zzzzé', int(q))
-            return q
+                yield q
         q += 1
 
-j = [x for x in gen_primes(239821585064027) if 239821585064027 % x == 0]
-print(j)
+for i in gen_primes(2497885147362973):
+    print(i)
+    break

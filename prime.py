@@ -39,7 +39,7 @@ def gen_primes(n):
             # Yield it and mark its first multiple that isn't
             # already marked in previous iterations
             # 
-            yield q
+            #yield q
             D[q * q] = [q]
         else:
             # q is composite. D[q] is the list of primes that
@@ -52,6 +52,7 @@ def gen_primes(n):
                 D.setdefault(p + q, []).append(p)
             del D[q]
         if n % int(q) == 0:
+            yield q
             break
         
         
